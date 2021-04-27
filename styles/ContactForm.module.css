@@ -1,0 +1,15 @@
+.container {
+  padding: 50px;
+  background-color: bisque;
+  font-weight: 600;
+}
+
+.submitButton {
+  border-style: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+  font-size: large;
+}
