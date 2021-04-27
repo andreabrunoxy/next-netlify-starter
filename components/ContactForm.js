@@ -8,7 +8,7 @@ export default function ContactForm() {
         className={styles.contactForm}
         name="contact"
         method="POST"
-        action="/success"
+        action="/"
         data-netlify="true"
       >
         <input type="hidden" name="form-name" value="contact" />
