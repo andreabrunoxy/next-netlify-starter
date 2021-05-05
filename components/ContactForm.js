@@ -4,7 +4,7 @@ export default function ContactForm() {
   return (
     <div>
       <div className={styles.formContainer}>
-        <h2>Contact me!</h2>
+        <h2>Contattaci</h2>
         <form
           className={styles.contactForm}
           name="contact"
@@ -16,7 +16,7 @@ export default function ContactForm() {
           <input type="hidden" name="subject" value="Messaggio da Netlify form" />
           <p>
             <label className={styles.label} htmlFor="yourname">
-              Your Name*:{" "}
+              Il tuo nome*:{" "}
             </label>{" "}
             <br />
             <input
@@ -29,7 +29,7 @@ export default function ContactForm() {
           </p>
           <p>
             <label className={styles.label} htmlFor="youremail">
-              Your Email*:{" "}
+              La tua email*:{" "}
             </label>{" "}
             <br />
             <input
@@ -42,7 +42,7 @@ export default function ContactForm() {
           </p>
           <p>
             <label className={styles.label} htmlFor="yourobject">
-              Subject*:{" "}
+              Oggetto*:{" "}
             </label>{" "}
             <br />
             <input
@@ -55,7 +55,7 @@ export default function ContactForm() {
           </p>
           <p>
             <label className={styles.label} htmlFor="yourmessage">
-              Message*:{" "}
+              Messaggio*:{" "}
             </label>{" "}
             <br />
             <textarea
@@ -66,8 +66,13 @@ export default function ContactForm() {
             ></textarea>
           </p>
           <p>
+            <div>
+              <input type="checkbox" id="privacy" name="privacy" required />
+              <label htmlFor="privacy"> Accetto la vostra Privacy Policy</label>
+            </div>
+            <br />
             <button className={styles.submitButton} type="submit">
-              Submit
+              Invia
             </button>
           </p>
         </form>
