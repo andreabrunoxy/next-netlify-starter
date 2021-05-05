@@ -1,15 +1,56 @@
-.container {
+.formContainer {
+  background: linear-gradient(20deg, #f69696, #dcdcff);
+  margin: 0 auto;
+  max-width: 600px;
   padding: 50px;
-  background-color: #ccc;
-  font-weight: 600;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 4px #303030;
+}
+
+.input {
+  padding: 10px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.input:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px #719ece;
+}
+
+.textarea {
+  padding: 10px 10px;
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px #719ece;
 }
 
 .submitButton {
-  border-style: none;
-  cursor: pointer;
-  padding: 5px 10px;
-  background-color: green;
-  border-radius: 5px;
+  background-color: red;
+  border: none;
   color: white;
-  font-size: large;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0px 4px 4px #303030;
+}
+
+.submitButton:hover {
+  transform: scale(0.9);
 }
