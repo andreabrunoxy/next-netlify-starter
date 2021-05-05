@@ -13,8 +13,12 @@ export default function ContactForm() {
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="subject" value="Messaggio da Netlify form" />
           <p>
-            <label htmlFor="yourname">Your Name*: </label> <br />
+            <label className={styles.label} htmlFor="yourname">
+              Your Name*:{" "}
+            </label>{" "}
+            <br />
             <input
               className={styles.input}
               type="text"
@@ -24,7 +28,10 @@ export default function ContactForm() {
             />
           </p>
           <p>
-            <label htmlFor="youremail">Your Email*: </label> <br />
+            <label className={styles.label} htmlFor="youremail">
+              Your Email*:{" "}
+            </label>{" "}
+            <br />
             <input
               className={styles.input}
               type="email"
@@ -34,17 +41,23 @@ export default function ContactForm() {
             />
           </p>
           <p>
-            <label htmlFor="yourobject">Object*: </label> <br />
+            <label className={styles.label} htmlFor="yourobject">
+              Subject*:{" "}
+            </label>{" "}
+            <br />
             <input
               className={styles.input}
               type="text"
-              name="object"
-              id="yourobject"
+              name="subject"
+              id="yoursubject"
               required
             />
           </p>
           <p>
-            <label htmlFor="yourmessage">Message*: </label> <br />
+            <label className={styles.label} htmlFor="yourmessage">
+              Message*:{" "}
+            </label>{" "}
+            <br />
             <textarea
               className={styles.textarea}
               name="message"
@@ -54,7 +67,7 @@ export default function ContactForm() {
           </p>
           <p>
             <button className={styles.submitButton} type="submit">
-              Send
+              Submit
             </button>
           </p>
         </form>
