@@ -12,13 +12,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Benvenuti nella mia app!" />
+        <Header title="Netlify Contact Form" />
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
         <div>
           <Link href="/contact">
-            <a>Contact us</a>
+            <a>Contattaci</a>
           </Link>
         </div>
       </main>

@@ -10,6 +10,7 @@ export default function ContactForm() {
           name="contact"
           method="POST"
           action="/"
+          data-netlify-recaptcha="true"
           data-netlify="true"
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -71,6 +72,9 @@ export default function ContactForm() {
               <label htmlFor="privacy"> Accetto la vostra Privacy Policy</label>
             </div>
             <br />
+          </p>
+          <div data-netlify-recaptcha="true"></div>
+          <p>
             <button className={styles.submitButton} type="submit">
               Invia
             </button>
