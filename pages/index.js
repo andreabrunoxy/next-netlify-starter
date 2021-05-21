@@ -25,10 +25,12 @@ export default function Home() {
             <a className={styles.btn}>Contattaci</a>
           </Link>
         </div>
-        <h2>React-Bootstrap Carousel</h2>
-        <MyCarousel />
-        <h2>react-responsive-carousel</h2>
-        <ResponsiveCarousel />
+        <div className="container">
+          <h2>React-Bootstrap Carousel</h2>
+          <MyCarousel />
+          <h2>react-responsive-carousel</h2>
+          <ResponsiveCarousel />
+        </div>
       </main>
 
       <Footer />
