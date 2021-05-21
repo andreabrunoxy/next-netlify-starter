@@ -25,3 +25,6 @@
 // //     return config;
 // //   }
 // // };
+module.exports = {
+  target: "serverless"
+};
