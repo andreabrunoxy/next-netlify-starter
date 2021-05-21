@@ -28,9 +28,18 @@ code {
 }
 
 .container {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.carousel {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

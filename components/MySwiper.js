@@ -15,9 +15,15 @@ export default function MySwiper() {
         onSlideChange={() => console.log("slide change")}
         onSwiper={swiper => console.log(swiper)}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>
+          <img src="/mare.jpg" alt="mare" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/montagna.jpg" alt="mare" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foresta.jpg" alt="mare" />
+        </SwiperSlide>
         ...
       </Swiper>
     </>
