@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run export",
-    "export": "next build && next export"
+    "build": "next build",
+    "export": "next export"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
