@@ -1,4 +1,3 @@
 [build]
-  command = "npm run build"
-  conmmandOrigin ="config
-  publish = "/opt/build/repo/out"
+command = "CI= npm run build"
+  publish = "out"
