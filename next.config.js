@@ -29,6 +29,6 @@
 //   }
 // // }
 
-// module.exports = {
-//   target: "serverless"
-// };
+module.exports = {
+  target: "serverless"
+};
