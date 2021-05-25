@@ -6,15 +6,17 @@ import MySwiper from "@components/MySwiper";
 import MyCarousel from "@components/MyCarousel";
 import styles from "../styles/Home.module.css";
 import ResponsiveCarousel from "@components/ResponsiveCarousel";
+import { createContext, useState, useEffect } from "react";
 
-export default function Home() {
+export const titleContext = createContext();
+
+export default function Home({ posts }) {
   return (
     <div className="container">
       <Head>
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
         <Header title="Netlify Contact Form" />
         <p className="description">
@@ -27,7 +29,9 @@ export default function Home() {
         </div>
         <div className="carousel-container">
           <h2>React-Bootstrap Carousel</h2>
-          <MyCarousel />
+          <titleContext.Provider value={posts}>
+            <MyCarousel />
+          </titleContext.Provider>
         </div>
         <div className="carousel-container">
           <h2>react-responsive-carousel</h2>
@@ -39,3 +43,25 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  const query = encodeURIComponent(`*[ _type == "post"]`);
+  const url = `https://tz6k1w72.api.sanity.io/v1/data/query/production?query=${query}`;
+  const result = await fetch(url).then(res => res.json());
+  const posts = result.result;
+  // const post = result.result[2];
+
+  if (!posts) {
+    return {
+      props: {
+        posts: []
+      }
+    };
+  } else {
+    return {
+      props: {
+        posts
+      }
+    };
+  }
+};
