@@ -28,12 +28,17 @@ code {
 }
 
 .container {
-  /* height: 100vh; */
-  /* display: flex;
+  /* height: 200vh;
+  display: flex;
   flex-direction: column; */
+  color: #eee;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
+    url("https://cdn.pixabay.com/photo/2019/12/30/05/27/muslim-background-4728869_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .carousel-container {
@@ -45,6 +50,7 @@ code {
   border: 1px solid grey;
   border-radius: 5px;
   box-shadow: 0px 0px 8px grey;
+  color: #303030;
 }
 
 @media only screen and (min-width: 600px) {

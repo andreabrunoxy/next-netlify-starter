@@ -10,25 +10,13 @@ import { createContext, useState, useEffect } from "react";
 export const titleContext = createContext();
 
 export default function Home({ posts }) {
-  /*Parallax Effect*/
-  const [offsetY, setOffsetY] = useState(0);
-
-  const handleScroll = () => setOffsetY(window.pageYOffset);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  /*End of Parallax Effect*/
-
   return (
     <div className="container">
       <Head>
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/*Apply parallax effect al main container*/}
-      <main style={{ transform: `translateY(${-offsetY * 0.3}px)` }}>
+      <main>
         <Header title="Netlify Contact Form" />
         <p className="description">
           Get started by editing <code>pages/index.js</code>

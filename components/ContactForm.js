@@ -22,20 +22,20 @@ export default function ContactForm() {
     formState: { errors }
   } = useForm();
 
-  // function onSubmitForm(values) {
+  // function onSubmitForm(data) {
   //   alert("Messaggio inviato, grazie!");
-  //   console.log(values);
+  //   console.log(data);
   //   reset();
   // }
 
-  const onSubmitForm = (values, e) => {
+  const onSubmitForm = (data, e) => {
     e.preventDefault();
     fetch("/contact", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...values })
+      body: encode({ "form-name": "contact", ...data })
     }).then(() => {
-      console.log(values);
+      console.log(data);
       alert("Messaggio inviato");
       reset();
     });
