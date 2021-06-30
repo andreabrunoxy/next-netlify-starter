@@ -9,6 +9,12 @@ export default function ContactForm() {
   const [objActive, setObjActive] = useState(false);
   const [msgActive, setMsgActive] = useState(false);
 
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const {
     register,
     handleSubmit,
@@ -16,11 +22,22 @@ export default function ContactForm() {
     formState: { errors }
   } = useForm();
 
-  function onSubmitForm(values) {
-    alert("Messaggio inviato, grazie!");
-    console.log(values);
-    reset();
-  }
+  // function onSubmitForm(values) {
+  //   alert("Messaggio inviato, grazie!");
+  //   console.log(values);
+  //   reset();
+  // }
+
+  const onSubmitForm = values => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values })
+    }).then(() => {
+      console.log(values);
+      reset();
+    });
+  };
 
   return (
     <div>
@@ -69,9 +86,9 @@ export default function ContactForm() {
               <input
                 className={errors.email ? styles.inputError : styles.input}
                 type="email"
-                name="email"
+                name="myemail"
                 id="youremail"
-                {...register("email", {
+                {...register("myemail", {
                   required: { value: true, message: "Inserisci la tua email." },
                   minLength: {
                     value: 8,
