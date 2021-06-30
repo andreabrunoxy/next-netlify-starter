@@ -28,8 +28,9 @@ export default function ContactForm() {
   //   reset();
   // }
 
-  const onSubmitForm = values => {
-    fetch("/", {
+  const onSubmitForm = (values, e) => {
+    e.preventDefault();
+    fetch("/contact", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...values })
@@ -88,9 +89,9 @@ export default function ContactForm() {
               <input
                 className={errors.email ? styles.inputError : styles.input}
                 type="email"
-                name="myemail"
+                name="email"
                 id="youremail"
-                {...register("myemail", {
+                {...register("email", {
                   required: { value: true, message: "Inserisci la tua email." },
                   minLength: {
                     value: 8,
