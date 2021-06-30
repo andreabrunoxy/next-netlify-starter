@@ -66,18 +66,18 @@ export default function ContactForm() {
               Il tuo nome*:{" "}
             </label>{" "}
             <br />
-            <Pulse spy={nameActive} duration={400}>
-              <input
-                className={errors.name ? styles.inputError : styles.input}
-                type="text"
-                name="name"
-                id="yourname"
-                {...register("name", {
-                  required: { value: true, message: "Inserisci il tuo nome" }
-                })}
-                onClick={() => (nameActive ? setNameActive(false) : setNameActive(true))}
-              />
-            </Pulse>
+            {/* <Pulse spy={nameActive} duration={400}> */}
+            <input
+              className={errors.name ? styles.inputError : styles.input}
+              type="text"
+              name="name"
+              id="yourname"
+              {...register("name", {
+                required: { value: true, message: "Inserisci il tuo nome" }
+              })}
+              onClick={() => (nameActive ? setNameActive(false) : setNameActive(true))}
+            />
+            {/* </Pulse> */}
             <span className={styles.error}>{errors.name && errors.name.message}</span>
           </p>
           <p>
@@ -85,29 +85,27 @@ export default function ContactForm() {
               La tua email*:{" "}
             </label>{" "}
             <br />
-            <Pulse spy={emailActive} duration={400}>
-              <input
-                className={errors.email ? styles.inputError : styles.input}
-                type="email"
-                name="email"
-                id="youremail"
-                {...register("email", {
-                  required: { value: true, message: "Inserisci la tua email." },
-                  minLength: {
-                    value: 8,
-                    message: "L'email deve avere almeno 8 caratteri."
-                  },
-                  pattern: {
-                    value:
-                      "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
-                    message: "Devi inserire un indirizzo email valido."
-                  }
-                })}
-                onClick={() =>
-                  emailActive ? setEmailActive(false) : setEmailActive(true)
+            {/* <Pulse spy={emailActive} duration={400}> */}
+            <input
+              className={errors.email ? styles.inputError : styles.input}
+              type="email"
+              name="email"
+              id="youremail"
+              {...register("email", {
+                required: { value: true, message: "Inserisci la tua email." },
+                minLength: {
+                  value: 8,
+                  message: "L'email deve avere almeno 8 caratteri."
+                },
+                pattern: {
+                  value:
+                    "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
+                  message: "Devi inserire un indirizzo email valido."
                 }
-              />
-            </Pulse>
+              })}
+              onClick={() => (emailActive ? setEmailActive(false) : setEmailActive(true))}
+            />
+            {/* </Pulse> */}
             <span className={styles.error}>{errors.email && errors.email.message}</span>
           </p>
           <p>
@@ -115,18 +113,18 @@ export default function ContactForm() {
               Oggetto*:{" "}
             </label>{" "}
             <br />
-            <Pulse spy={objActive} duration={400}>
-              <input
-                className={errors.subject ? styles.inputError : styles.input}
-                type="text"
-                name="subject"
-                id="yoursubject"
-                {...register("subject", {
-                  required: { value: true, message: "Scrivi l'oggetto." }
-                })}
-                onClick={() => (objActive ? setObjActive(false) : setObjActive(true))}
-              />
-            </Pulse>
+            {/* <Pulse spy={objActive} duration={400}> */}
+            <input
+              className={errors.subject ? styles.inputError : styles.input}
+              type="text"
+              name="subject"
+              id="yoursubject"
+              {...register("subject", {
+                required: { value: true, message: "Scrivi l'oggetto." }
+              })}
+              onClick={() => (objActive ? setObjActive(false) : setObjActive(true))}
+            />
+            {/* </Pulse> */}
             <span className={styles.error}>
               {errors.subject && errors.subject.message}
             </span>
@@ -136,21 +134,21 @@ export default function ContactForm() {
               Messaggio*:{" "}
             </label>{" "}
             <br />
-            <Pulse spy={msgActive} duration={400}>
-              <textarea
-                className={errors.message ? styles.textAreaError : styles.textarea}
-                name="message"
-                id="yourmessage"
-                {...register("message", {
-                  required: { value: true, message: "Scrivi il tuo messaggio." },
-                  minLength: {
-                    value: 8,
-                    message: "Message min 8 chars"
-                  }
-                })}
-                onClick={() => (msgActive ? setMsgActive(false) : setMsgActive(true))}
-              ></textarea>
-            </Pulse>
+            {/* <Pulse spy={msgActive} duration={400}> */}
+            <textarea
+              className={errors.message ? styles.textAreaError : styles.textarea}
+              name="message"
+              id="yourmessage"
+              {...register("message", {
+                required: { value: true, message: "Scrivi il tuo messaggio." },
+                minLength: {
+                  value: 8,
+                  message: "Message min 8 chars"
+                }
+              })}
+              onClick={() => (msgActive ? setMsgActive(false) : setMsgActive(true))}
+            ></textarea>
+            {/* </Pulse> */}
             <br />
             <span className={styles.error}>
               {errors.message && errors.message.message}
