@@ -34,7 +34,12 @@ export default function ContactForm() {
           action="/"
           data-netlify="true"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input
+            type="hidden"
+            name="form-name"
+            value="contact"
+            {...register("form-name", { required: true })}
+          />
           <input type="hidden" name="subject" value="Messaggio da Netlify form" />
           <p>
             <label className={styles.label} htmlFor="yourname">
