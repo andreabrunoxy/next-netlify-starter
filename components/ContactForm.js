@@ -87,11 +87,11 @@ export default function ContactForm() {
             <br />
             <Pulse spy={emailActive} duration={400}>
               <input
-                className={errors.myemail ? styles.inputError : styles.input}
+                className={errors.email ? styles.inputError : styles.input}
                 type="email"
-                name="myemail"
+                name="email"
                 id="youremail"
-                {...register("myemail", {
+                {...register("email", {
                   required: { value: true, message: "Inserisci la tua email." },
                   minLength: {
                     value: 8,
@@ -108,9 +108,7 @@ export default function ContactForm() {
                 }
               />
             </Pulse>
-            <span className={styles.error}>
-              {errors.myemail && errors.myemail.message}
-            </span>
+            <span className={styles.error}>{errors.email && errors.email.message}</span>
           </p>
           <p>
             <label className={styles.label} htmlFor="yourobject">
