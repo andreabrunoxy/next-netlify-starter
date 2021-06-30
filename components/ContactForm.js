@@ -52,7 +52,6 @@ export default function ContactForm() {
           // method="POST"
           // action="/"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
         >
           <input
             type="hidden"
