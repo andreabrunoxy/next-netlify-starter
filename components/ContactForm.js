@@ -88,7 +88,7 @@ export default function ContactForm() {
             <input
               className={errors.email ? styles.inputError : styles.input}
               type="email"
-              name="email"
+              // name="email"
               id="youremail"
               {...register("email", {
                 required: { value: true, message: "Inserisci la tua email." },
