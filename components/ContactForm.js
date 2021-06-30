@@ -35,6 +35,7 @@ export default function ContactForm() {
       body: encode({ "form-name": "contact", ...values })
     }).then(() => {
       console.log(values);
+      alert("Messaggio inviato");
       reset();
     });
   };
@@ -46,10 +47,11 @@ export default function ContactForm() {
         <form
           onSubmit={handleSubmit(onSubmitForm)}
           className={styles.contactForm}
-          name="contact"
-          method="POST"
-          action="/"
+          // name="contact"
+          // method="POST"
+          // action="/"
           data-netlify="true"
+          data-netlify-honeypot="bot-field"
         >
           <input
             type="hidden"
