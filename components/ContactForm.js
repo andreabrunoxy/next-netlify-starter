@@ -85,7 +85,7 @@ export default function ContactForm() {
             </label>{" "}
             <br />
             {/* <Pulse spy={emailActive} duration={400}> */}
-            {/* <input
+            <input
               className={errors.email ? styles.inputError : styles.input}
               type="text"
               name="email"
@@ -103,13 +103,6 @@ export default function ContactForm() {
                 }
               })}
               onClick={() => (emailActive ? setEmailActive(false) : setEmailActive(true))}
-            /> */}
-            <input
-              className={errors.email ? styles.inputError : styles.input}
-              type="text"
-              placeholder="Email"
-              id="youremail"
-              {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
             />
             {/* </Pulse> */}
             <span className={styles.error}>{errors.email && errors.email.message}</span>
