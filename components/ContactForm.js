@@ -69,7 +69,7 @@ export default function ContactForm() {
             <input
               className={errors.name ? styles.inputError : styles.input}
               type="text"
-              name="name"
+              // name="name"
               id="yourname"
               {...register("name", {
                 required: { value: true, message: "Inserisci il tuo nome" }
@@ -88,7 +88,7 @@ export default function ContactForm() {
             <input
               className={errors.email ? styles.inputError : styles.input}
               type="text"
-              name="email"
+              // name="email"
               id="youremail"
               {...register("email", {
                 required: { value: true, message: "Inserisci la tua email." },
@@ -116,7 +116,7 @@ export default function ContactForm() {
             <input
               className={errors.subject ? styles.inputError : styles.input}
               type="text"
-              name="subject"
+              // name="subject"
               id="yoursubject"
               {...register("subject", {
                 required: { value: true, message: "Scrivi l'oggetto." }
@@ -136,7 +136,7 @@ export default function ContactForm() {
             {/* <Pulse spy={msgActive} duration={400}> */}
             <textarea
               className={errors.message ? styles.textAreaError : styles.textarea}
-              name="message"
+              // name="message"
               id="yourmessage"
               {...register("message", {
                 required: { value: true, message: "Scrivi il tuo messaggio." },
