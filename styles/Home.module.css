@@ -1,7 +1,9 @@
 .btn {
-  background-color: green;
+  display: inline-block;
+  width: 100px;
+  margin: 20px auto;
   padding: 5px 10px;
+  background-color: green;
   color: white;
-  text-decoration: none;
   cursor: pointer;
 }

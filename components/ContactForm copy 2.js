@@ -87,7 +87,7 @@ export default function ContactForm() {
             {/* <Pulse spy={emailActive} duration={400}> */}
             <input
               className={errors.email ? styles.inputError : styles.input}
-              type="text"
+              type="email"
               name="email"
               id="youremail"
               {...register("email", {

@@ -28,7 +28,7 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/*Apply parallax effect al main container*/}
-      <main style={{ transform: `translateY(${-offsetY * 0.3}px)` }}>
+      <main className="main" style={{ transform: `translateY(${-offsetY * 0.3}px)` }}>
         <Header title="Netlify Contact Form" />
         <p className="description">
           Get started by editing <code>pages/index.js</code>

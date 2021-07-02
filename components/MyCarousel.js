@@ -5,6 +5,7 @@ import { titleContext } from "../pages/index";
 import imageUrlBuilder from "@sanity/image-url";
 import React, { useState, useContext } from "react";
 import sanityClient from "../sanityClient";
+import styles from "../styles/MyCarousel.module.css";
 
 export default function MyCarousel() {
   const posts = useContext(titleContext);
@@ -33,8 +34,7 @@ export default function MyCarousel() {
               className="d-block w-100"
               src={urlFor(post.mainImage).url()}
               alt="First slide"
-              width={600}
-              height={400}
+              layout="fill"
             />
             <Carousel.Caption>
               <h3>{post.title}</h3>
