@@ -1,7 +1,6 @@
 import styles from "../styles/ContactForm.module.css";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import Pulse from "react-reveal/Pulse";
 
 export default function ContactForm() {
   const [nameActive, setNameActive] = useState(false);
@@ -21,12 +20,6 @@ export default function ContactForm() {
     reset,
     formState: { errors }
   } = useForm();
-
-  // function onSubmitForm(data) {
-  //   alert("Messaggio inviato, grazie!");
-  //   console.log(data);
-  //   reset();
-  // }
 
   const onSubmitForm = (data, e) => {
     e.preventDefault();
@@ -52,7 +45,14 @@ export default function ContactForm() {
           method="POST"
           action="/"
           data-netlify="true"
+          netlify-honeypot="bot-field"
         >
+          {/*NETLIFY ANTI SPAM*/}
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
           <input
             type="hidden"
             name="form-name"
@@ -65,7 +65,6 @@ export default function ContactForm() {
               Il tuo nome*:{" "}
             </label>{" "}
             <br />
-            {/* <Pulse spy={nameActive} duration={400}> */}
             <input
               className={errors.name ? styles.inputError : styles.input}
               type="text"
@@ -76,7 +75,6 @@ export default function ContactForm() {
               })}
               onClick={() => (nameActive ? setNameActive(false) : setNameActive(true))}
             />
-            {/* </Pulse> */}
             <span className={styles.error}>{errors.name && errors.name.message}</span>
           </p>
           <p>
@@ -84,7 +82,6 @@ export default function ContactForm() {
               La tua email*:{" "}
             </label>{" "}
             <br />
-            {/* <Pulse spy={emailActive} duration={400}> */}
             <input
               className={errors.email ? styles.inputError : styles.input}
               type="text"
@@ -92,19 +89,18 @@ export default function ContactForm() {
               id="youremail"
               {...register("email", {
                 required: { value: true, message: "Inserisci la tua email." },
+                minLength: {
+                  value: 8,
+                  message: "L'email deve avere almeno 8 caratteri."
+                },
                 pattern: {
                   value:
                     "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
                   message: "Devi inserire un indirizzo email valido."
-                },
-                minLength: {
-                  value: 8,
-                  message: "L'email deve avere almeno 8 caratteri."
                 }
               })}
               onClick={() => (emailActive ? setEmailActive(false) : setEmailActive(true))}
             />
-            {/* </Pulse> */}
             <span className={styles.error}>{errors.email && errors.email.message}</span>
           </p>
           <p>
@@ -112,7 +108,6 @@ export default function ContactForm() {
               Oggetto*:{" "}
             </label>{" "}
             <br />
-            {/* <Pulse spy={objActive} duration={400}> */}
             <input
               className={errors.subject ? styles.inputError : styles.input}
               type="text"
@@ -123,7 +118,6 @@ export default function ContactForm() {
               })}
               onClick={() => (objActive ? setObjActive(false) : setObjActive(true))}
             />
-            {/* </Pulse> */}
             <span className={styles.error}>
               {errors.subject && errors.subject.message}
             </span>
@@ -133,7 +127,6 @@ export default function ContactForm() {
               Messaggio*:{" "}
             </label>{" "}
             <br />
-            {/* <Pulse spy={msgActive} duration={400}> */}
             <textarea
               className={errors.message ? styles.textAreaError : styles.textarea}
               name="message"
@@ -147,7 +140,6 @@ export default function ContactForm() {
               })}
               onClick={() => (msgActive ? setMsgActive(false) : setMsgActive(true))}
             ></textarea>
-            {/* </Pulse> */}
             <br />
             <span className={styles.error}>
               {errors.message && errors.message.message}
