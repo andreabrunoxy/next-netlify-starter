@@ -48,7 +48,7 @@ export default function ContactForm() {
           netlify-honeypot="bot-field"
         >
           {/*NETLIFY ANTI SPAM*/}
-          <p class="hidden">
+          <p className={styles.hidden}>
             <label>
               Don’t fill this out if you’re human: <input name="bot-field" />
             </label>
@@ -95,7 +95,7 @@ export default function ContactForm() {
                 },
                 pattern: {
                   value:
-                    "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
+                    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/i,
                   message: "Devi inserire un indirizzo email valido."
                 }
               })}
