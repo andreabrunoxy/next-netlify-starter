@@ -48,9 +48,9 @@ export default function ContactForm() {
         <form
           onSubmit={handleSubmit(onSubmitForm)}
           className={styles.contactForm}
-          // name="contact"
-          // method="POST"
-          // action="/"
+          name="contact"
+          method="POST"
+          action="/"
           data-netlify="true"
         >
           <input
@@ -92,14 +92,14 @@ export default function ContactForm() {
               id="youremail"
               {...register("email", {
                 required: { value: true, message: "Inserisci la tua email." },
-                minLength: {
-                  value: 8,
-                  message: "L'email deve avere almeno 8 caratteri."
-                },
                 pattern: {
                   value:
                     "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$",
                   message: "Devi inserire un indirizzo email valido."
+                },
+                minLength: {
+                  value: 8,
+                  message: "L'email deve avere almeno 8 caratteri."
                 }
               })}
               onClick={() => (emailActive ? setEmailActive(false) : setEmailActive(true))}
