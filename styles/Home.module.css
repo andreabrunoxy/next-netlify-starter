@@ -1,13 +1,3 @@
-.titleVisible {
-  font-size: 1.5rem;
-  transition: all 2s ease-in-out;
-}
-
-.titleNotVisible {
-  font-size: 0.5rem;
-  transition: all 2s ease-in-out;
-}
-
 .btn {
   display: inline-block;
   width: 100px;

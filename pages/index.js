@@ -38,7 +38,7 @@ export default function Home({ posts }) {
       {/*Apply parallax effect al main container*/}
       <main className="main" style={{ transform: `translateY(${-offsetY * 0.3}px)` }}>
         <Header title="Netlify Contact Form" />
-        <p className={isVisible ? styles.titleVisible : styles.titleNotVisible}>
+        <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
         <div>
