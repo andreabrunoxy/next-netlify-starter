@@ -5,7 +5,8 @@ import Link from "next/link";
 import MyCarousel from "@components/MyCarousel";
 import styles from "../styles/Home.module.css";
 import ResponsiveCarousel from "@components/ResponsiveCarousel";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useRef } from "react";
+import useOnScreen from "hooks/useOnScreen";
 
 export const titleContext = createContext();
 
@@ -21,6 +22,13 @@ export default function Home({ posts }) {
   }, []);
   /*End of Parallax Effect*/
 
+  /*useOnScreen*/
+  const ref = useRef(null);
+  // useEffect(() => {}, []);
+  const isVisible = useOnScreen(ref);
+  console.log("isVisible", isVisible);
+  /*End of useOnScreen*/
+
   return (
     <div className="container">
       <Head>
@@ -35,7 +43,9 @@ export default function Home({ posts }) {
         </p>
         <div>
           <Link href="/contact">
-            <a className={styles.btn}>Contattaci</a>
+            <a ref={ref} className={isVisible ? styles.btn : styles.new}>
+              Contattaci
+            </a>
           </Link>
         </div>
         <div className="carousel-container">
