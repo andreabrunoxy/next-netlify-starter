@@ -1,12 +1,12 @@
-import Head from "next/head";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import Link from "next/link";
-import MyCarousel from "@components/MyCarousel";
-import styles from "../styles/Home.module.css";
-import ResponsiveCarousel from "@components/ResponsiveCarousel";
-import { createContext, useState, useEffect, useRef } from "react";
-import useOnScreen from "hooks/useOnScreen";
+import Head from 'next/head';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
+import Link from 'next/link';
+import MyCarousel from '@components/MyCarousel';
+import styles from '../styles/Home.module.css';
+import ResponsiveCarousel from '@components/ResponsiveCarousel';
+import { createContext, useState, useEffect, useRef } from 'react';
+import useOnScreen from 'hooks/useOnScreen';
 
 export const titleContext = createContext();
 
@@ -17,8 +17,8 @@ export default function Home({ posts }) {
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   /*End of Parallax Effect*/
 
@@ -26,7 +26,7 @@ export default function Home({ posts }) {
   const ref = useRef(null);
   // useEffect(() => {}, []);
   const isVisible = useOnScreen(ref);
-  console.log("isVisible", isVisible);
+  console.log('isVisible', isVisible);
   /*End of useOnScreen*/
 
   return (
@@ -43,7 +43,12 @@ export default function Home({ posts }) {
         </p>
         <div>
           <Link href="/contact">
-            <a ref={ref} className={isVisible ? styles.btn : styles.new}>
+            <a
+              ref={ref}
+              className={
+                isVisible ? `${styles['btn']} ${styles['new']}` : `${styles['btn']}`
+              }
+            >
               Contattaci
             </a>
           </Link>
