@@ -36,7 +36,7 @@ code {
   align-items: center;
   text-align: center;
   background: linear-gradient(rgb(0, 0, 0, 0.5), rgb(0, 0, 0, 0.5)),
-    url("https://cdn.pixabay.com/photo/2019/12/30/05/27/muslim-background-4728869_960_720.jpg");
+    url('https://cdn.pixabay.com/photo/2019/12/30/05/27/muslim-background-4728869_960_720.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
