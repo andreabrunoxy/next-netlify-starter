@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import styles from '@components/Header/Header.module.css';
-
+import styles from '../../components/Header/Header.module.css';
 export default function Header({ title }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
