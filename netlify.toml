@@ -1,5 +1,0 @@
-[build]
-  CI = "npm run build"
-  publish = "out"
-functions = "functions/"
-
