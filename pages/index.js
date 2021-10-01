@@ -26,7 +26,6 @@ export default function Home({ posts }) {
   const ref = useRef(null);
   // useEffect(() => {}, []);
   const isVisible = useOnScreen(ref);
-  console.log('isVisible', isVisible);
   /*End of useOnScreen*/
 
   return (
