@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from '../../components/Header/Header.module.css';
+
 export default function Header({ title }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -11,9 +12,6 @@ export default function Header({ title }) {
             onClick={() => setIsOpen(!isOpen)}
             className={`${styles['fancy-burger']}`}
           >
-            {/* <span
-              className={`${styles['box']} ${isOpen ? `${styles['open']}` : ''}`}
-            ></span> */}
             <span
               className={`${styles['rectangle']} ${styles['rectangle--top']} ${
                 styles['rectangle--small']
